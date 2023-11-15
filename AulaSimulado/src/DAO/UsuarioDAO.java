@@ -6,8 +6,9 @@
 package DAO;
 
 import aulasimulado.Conexao;
-import java.sql.PreparedStatement;
+import java.sql.*;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import javax.swing.JOptionPane;
 import model.Usuario;
 
@@ -28,11 +29,12 @@ public class UsuarioDAO {
                 String nome = result.getString("nome");
                 String emailRetorno = result.getString("email");
                 String senha = result.getString("senha");
-                Usuario usuario = new Usuario(id,email, senha, nome);
+                Usuario usuario = new Usuario(id,emailRetorno, senha, nome);
                       
+               return usuario;
             }
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Problema ao buscar");
+        } catch (ClassNotFoundException | SQLException e ) {
+          
         }
         return null;
     }

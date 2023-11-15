@@ -15,7 +15,7 @@ import model.Usuario;
  */
 public class telaLogin extends javax.swing.JFrame {
 
-    Usuario usuario;
+ 
    
     public telaLogin() {
         initComponents();
@@ -123,10 +123,10 @@ public boolean valida(){
            new telaPrincipal().setVisible(true);
            this.dispose();
         */
-      Usuario usuario = new UsuarioDAO().buscarGerentePorEmail(usuario);
+          String usuario = this.email.getText();
           String senha = this.senha.getText();
-          String email = this.email.getText();
    
+      Usuario u = new UsuarioDAO().buscarGerentePorEmail(usuario);
           
           
     } else {
