@@ -18,7 +18,7 @@ public class turmaDAO {
 
     public static ArrayList<Turma> buscarTurmas(int id) {
 
-        String sql = "SELECT * FROM turmas WHERE id_professor = ?";
+        String sql = "SELECT * FROM turma WHERE id_professor = ?";
         ArrayList<Turma> turmas = new ArrayList<>();
         
 
@@ -29,13 +29,15 @@ public class turmaDAO {
             
             while(rs.next()){
                 String nome = rs.getString("nome");
-                int numero = rs.getInt("numero");
+                int numero = rs.getInt("numero_turma");
                 turmas.add(new Turma(numero, nome));
             }
+            
+            return turmas;
         } catch (Exception e) {
             System.out.println(e);
         }
-        return null;
+        return turmas;
 
     }
 

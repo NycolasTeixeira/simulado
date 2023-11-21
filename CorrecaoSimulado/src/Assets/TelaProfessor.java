@@ -17,21 +17,29 @@ import javax.swing.JOptionPane;
  */
 public class TelaProfessor extends javax.swing.JFrame {
 
-   
+    String nome = correcaosimulado.CorrecaoSimulado.pGlobal.getNome();
+    int id = correcaosimulado.CorrecaoSimulado.pGlobal.getId();
+
     public TelaProfessor() {
         initComponents();
-       this.CarregarTabela();
+        this.nomeProfessor.setText(nome);
+        this.CarregarTabela();
     }
-    
-    
-    public void CarregarTabela(){
-      
-        ArrayList<Turma> turmas = turmaDAO.buscarTurmas();
-        
-        for (int i = 0; i < 4; i++) {
-            this.painelPrincipal.add(new LinhaTabela("", "Dev" + i));
+
+    public void CarregarTabela() {
+
+        ArrayList<Turma> turmas = turmaDAO.buscarTurmas(id);
+
+        for (int i = 0; i < turmas.size(); i++) {
+          
+           this.painelPrincipal.add(new Turma());
+        }
+
+        /*  for (int i = 0; i < 4; i++) {
+            this.painelPrincipal.add(new LinhaTabela("", "Dev " + i));
             
         }
+         */
     }
 
     /**
@@ -113,12 +121,6 @@ public class TelaProfessor extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(55, 55, 55)
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(cadastrarTurma)
-                .addGap(63, 63, 63))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -131,11 +133,18 @@ public class TelaProfessor extends javax.swing.JFrame {
                         .addComponent(jLabel3)
                         .addGap(156, 156, 156)
                         .addComponent(jLabel4)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(144, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(19, Short.MAX_VALUE)
-                .addComponent(painelPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, 605, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(86, 86, 86))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(painelPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, 628, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(55, 55, 55)
+                        .addComponent(jLabel1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(cadastrarTurma)))
+                .addGap(63, 63, 63))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -170,12 +179,10 @@ public class TelaProfessor extends javax.swing.JFrame {
     }//GEN-LAST:event_cadastrarTurmaActionPerformed
 
     private void nomeProfessorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nomeProfessorActionPerformed
-    
-        
-       
+
+
     }//GEN-LAST:event_nomeProfessorActionPerformed
 
-  
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JToggleButton cadastrarTurma;

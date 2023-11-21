@@ -116,9 +116,9 @@ public class Login extends javax.swing.JFrame {
         String email = this.emailLogin.getText();
         String senha = this.senhaLogin.getText();
 
-        Professor p1 = ProfessorDAO.buscarporEmail(email);
+        correcaosimulado.CorrecaoSimulado.pGlobal = ProfessorDAO.buscarporEmail(email);
 
-        if (!p1.getSenha().equals(senha)) {
+        if (!correcaosimulado.CorrecaoSimulado.pGlobal.getSenha().equals(senha)) {
             JOptionPane.showMessageDialog(null, "senha errada");
             this.emailLogin.setText("");
             this.senhaLogin.setText("");
@@ -127,7 +127,7 @@ public class Login extends javax.swing.JFrame {
 
         }
         
-          if (p1 == null) {
+          if (correcaosimulado.CorrecaoSimulado.pGlobal == null) {
             JOptionPane.showMessageDialog(null, "Professor não encontrado");
             this.emailLogin.setText("");
             this.senhaLogin.setText("");

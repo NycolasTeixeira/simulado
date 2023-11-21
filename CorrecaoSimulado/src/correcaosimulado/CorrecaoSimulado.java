@@ -8,7 +8,7 @@ import Model.Professor;
 
 public class CorrecaoSimulado {
 
-   
+   public static Professor pGlobal;
      
    
     public static void main(String[] args) {

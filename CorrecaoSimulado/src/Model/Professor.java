@@ -5,7 +5,7 @@
 package Model;
 
 import java.util.logging.Logger;
-import org.mindrot.jbcrypt.BCrypt;
+
 
 /**
  *
@@ -32,9 +32,7 @@ public class Professor {
         this.senha = senha;
     }
 
-    public Professor() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+   
 
     public int getId() {
         return id;

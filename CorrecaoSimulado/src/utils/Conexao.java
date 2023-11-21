@@ -18,7 +18,7 @@ public class Conexao {
 
         try {
             
-            return DriverManager.getConnection("jdbc:postgresql://localhost:5432/saep_db", "postgres", "senai");
+            return DriverManager.getConnection("jdbc:postgresql://localhost:5432/saep_db", "postgres", "nycolas");
            
         } catch (SQLException e) {
             System.out.println("chegou");
