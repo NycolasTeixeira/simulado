@@ -13,27 +13,20 @@ import java.sql.SQLException;
  * @author nycolas_teixeira
  */
 public class Conexao {
-    
- public static   Connection conexao(){
-     
-     
-     
-     try {
-         return
-     DriverManager.
-             getConnection
-        ("jdbc:postgresql://localhost:5432/saep_db","postgres", "senai");
-     } catch (SQLException e) {
-         System.out.println(e);
-     }
-     
-     return null;
-     
- }
-    
-    
-    
-    
-    
-    
+
+    public static Connection conexao() {
+
+        try {
+            
+            return DriverManager.getConnection("jdbc:postgresql://localhost:5432/saep_db", "postgres", "senai");
+           
+        } catch (SQLException e) {
+            System.out.println("chegou");
+            System.out.println(e);
+        }
+
+        return null;
+
+    }
+
 }

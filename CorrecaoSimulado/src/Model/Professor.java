@@ -5,12 +5,14 @@
 package Model;
 
 import java.util.logging.Logger;
+import org.mindrot.jbcrypt.BCrypt;
 
 /**
  *
  * @author nycolas_teixeira
  */
 public class Professor {
+
     private int id;
     private String nome;
     private String email;
@@ -19,8 +21,19 @@ public class Professor {
     public Professor(int id, String nome, String email, String senha) {
         this.id = id;
         this.nome = nome;
+        this.senha = senha;
+        this.email = email;
+
+    }
+
+    public Professor(String nome, String email, String senha) {
+        this.nome = nome;
         this.email = email;
         this.senha = senha;
+    }
+
+    public Professor() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     public int getId() {
@@ -38,6 +51,5 @@ public class Professor {
     public String getSenha() {
         return senha;
     }
-    
-    
+
 }

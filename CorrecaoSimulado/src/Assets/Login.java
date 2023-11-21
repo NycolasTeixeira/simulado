@@ -1,19 +1,16 @@
-
 package Assets;
 
 import DAO.ProfessorDAO;
 import Model.Professor;
 import javax.swing.JOptionPane;
 
-
 public class Login extends javax.swing.JFrame {
 
-   
     public Login() {
         initComponents();
     }
 
-    
+
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
@@ -115,18 +112,31 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_emailLoginActionPerformed
 
     private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
-        
+
         String email = this.emailLogin.getText();
         String senha = this.senhaLogin.getText();
+
+        Professor p1 = ProfessorDAO.buscarporEmail(email);
+
+        if (!p1.getSenha().equals(senha)) {
+            JOptionPane.showMessageDialog(null, "senha errada");
+            this.emailLogin.setText("");
+            this.senhaLogin.setText("");
+
+            return;
+
+        }
         
-        correcaosimulado.CorrecaoSimulado.professor = ProfessorDAO.buscarporEmail(email);
-        if( correcaosimulado.CorrecaoSimulado.professor == null){
+          if (p1 == null) {
             JOptionPane.showMessageDialog(null, "Professor não encontrado");
+            this.emailLogin.setText("");
+            this.senhaLogin.setText("");
+
+            return;
+
         }
-        if(correcaosimulado.CorrecaoSimulado.professor.equals(senha)){
-            JOptionPane.showMessageDialog(null, "senha incorreta");
-        }
-        this.dispose();
+      
+
         new TelaProfessor().setVisible(true);
     }//GEN-LAST:event_jToggleButton1ActionPerformed
 
@@ -134,7 +144,6 @@ public class Login extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_jToggleButton2ActionPerformed
 
-   
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField emailLogin;

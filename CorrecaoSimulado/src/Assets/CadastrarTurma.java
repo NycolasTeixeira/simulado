@@ -5,6 +5,8 @@
  */
 package Assets;
 
+import Model.Professor;
+
 /**
  *
  * @author nycolas_teixeira

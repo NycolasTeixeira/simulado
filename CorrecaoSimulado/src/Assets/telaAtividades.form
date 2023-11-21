@@ -60,7 +60,7 @@
                       </Group>
                   </Group>
               </Group>
-              <EmptySpace min="63" pref="91" max="32767" attributes="0"/>
+              <EmptySpace min="63" pref="134" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -109,8 +109,8 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
-                  <Component id="jTextField1" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="408" max="32767" attributes="0"/>
+                  <Component id="jTextField1" min="-2" pref="110" max="-2" attributes="0"/>
+                  <EmptySpace pref="304" max="32767" attributes="0"/>
                   <Component id="jToggleButton1" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
               </Group>
@@ -131,9 +131,6 @@
       </Layout>
       <SubComponents>
         <Component class="javax.swing.JTextField" name="jTextField1">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Nycolas"/>
-          </Properties>
           <Events>
             <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jTextField1MouseClicked"/>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField1ActionPerformed"/>
